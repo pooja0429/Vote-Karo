@@ -25,42 +25,32 @@
                     <% } %>
                 <% } %>
             </div> -->
-            <!-- <div class="mt-4 bg-white shadow-md rounded-lg text-left">
-                <div class="h-2 bg-black rounded-t-md"></div>
-                <form action="/elections/<%= id %>/questions/create" method="post" class="px-8 py-6">
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                    <label for="question" class="block mt-3 font-semibold">What is the question?</label>
-                    <input id="question" name="question" type="text" placeholder="Question" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" required>
-                    <label for="description" class="block mt-3 font-semibold">Description of the question</label>
-                    <textarea id="description" name="description" class="border w-full px-2 py-1 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" placeholder="Description" rows="4" cols="20"></textarea>
-                    <button type="submit" class="mt-6 w-full bg-black text-white py-2 px-6 rounded-md hover:bg-white hover:text-black ">Add new question</button>
-                </form>
-            </div> -->
+           
             
             <section class="text-gray-600 body-font">
                 <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
                   <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-                    <h1 class="title-font font-medium text-3xl text-gray-900">Create New Election From Here</h1>
-                    <p class="leading-relaxed mt-4">Creating Election Is Must In order To Add Questions</p>
+                    <h1 class="title-font font-medium text-3xl text-gray-900">Create New Question For Your Election From Here</h1>
+                    <p class="leading-relaxed mt-4">Add Proper Description Along With The Question</p>
                   </div>
         
                   <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-                    <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Create New Election</h2>
-                    <form action="/elections" method="post" class="px-8 py-6">
+                    <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Create New Question</h2>
+                    <form action="/elections/<%= id %>/questions/create" method="post" class="px-8 py-6">
                         <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                         <div class="relative mb-4">
-                            <label for="electionName" class="leading-7 text-sm text-gray-600">Enter Election Name</label>
-                            <input type="text" id="electionName" name="electionName" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            <label for="question" class="leading-7 text-sm text-gray-600">Enter Question</label>
+                            <input type="text" id="question" name="question" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                           </div>
                           <div class="relative mb-4">
-                            <label for="urlString" class="leading-7 text-sm text-gray-600">Enter URL</label>
-                            <input type="text" id="urlString" name="urlString" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            <label for="description" class="leading-7 text-sm text-gray-600">Enter Description</label>
+                            <textarea type="text" id="description" name="description" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"> </textarea>
                           </div>
                           
                     
                 
-                    <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create New Election</button>
-                    <p class="text-xs text-gray-500 mt-3">Online Voting Is Just Better Right?</p>
+                    <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create New Question</button>
+                    <p class="text-xs text-gray-500 mt-3">Add Meaningful Questions</p>
                 
                   </div>
                 </form>
