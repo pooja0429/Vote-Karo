@@ -17,17 +17,15 @@
         <span>></span>
         <a href="/elections/<%= id %>/questions" class="text-red-800 hover:text-red-600">Questions</a>
     </div>
-    <div class=" flex text-gray-800 antialiased flex-col  overflow-hidden bg-gray-50 py-6 sm:py-12">
-        <div class=" py-3 sm:w-96 mx-auto text-center">
-            <span class="text-2xl font-light ">Add a new Question</span>
+  
             <div>
                 <% if (messages && messages.error && messages.error.length > 0) { %>
                     <% for(var i=0; i<messages.error.length; i++) { %>
                         <p class="bg-red-100 my-3 list-none rounded-md px-4 py-2"><%= messages.error[i] %></p>
                     <% } %>
                 <% } %>
-            </div>
-            <div class="mt-4 bg-white shadow-md rounded-lg text-left">
+            </div> -->
+            <!-- <div class="mt-4 bg-white shadow-md rounded-lg text-left">
                 <div class="h-2 bg-black rounded-t-md"></div>
                 <form action="/elections/<%= id %>/questions/create" method="post" class="px-8 py-6">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
@@ -37,8 +35,39 @@
                     <textarea id="description" name="description" class="border w-full px-2 py-1 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" placeholder="Description" rows="4" cols="20"></textarea>
                     <button type="submit" class="mt-6 w-full bg-black text-white py-2 px-6 rounded-md hover:bg-white hover:text-black ">Add new question</button>
                 </form>
-            </div>
-        </div>
-    </div>
+            </div> -->
+            
+            <section class="text-gray-600 body-font">
+                <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+                  <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+                    <h1 class="title-font font-medium text-3xl text-gray-900">Create New Election From Here</h1>
+                    <p class="leading-relaxed mt-4">Creating Election Is Must In order To Add Questions</p>
+                  </div>
+        
+                  <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+                    <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Create New Election</h2>
+                    <form action="/elections" method="post" class="px-8 py-6">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                        <div class="relative mb-4">
+                            <label for="electionName" class="leading-7 text-sm text-gray-600">Enter Election Name</label>
+                            <input type="text" id="electionName" name="electionName" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                          </div>
+                          <div class="relative mb-4">
+                            <label for="urlString" class="leading-7 text-sm text-gray-600">Enter URL</label>
+                            <input type="text" id="urlString" name="urlString" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                          </div>
+                          
+                    
+                
+                    <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Create New Election</button>
+                    <p class="text-xs text-gray-500 mt-3">Online Voting Is Just Better Right?</p>
+                
+                  </div>
+                </form>
+                </div>
+            
+              </section>
+        
+    
 </body>
 </html>

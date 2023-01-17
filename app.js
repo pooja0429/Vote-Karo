@@ -330,7 +330,7 @@ app.get(
     } catch (error) {
       console.log(error);
       return response.status(422).json(error);
-    }s
+    }
   }
 );
 
@@ -339,7 +339,7 @@ app.get(
   "/elections/:id/questions/create",
   connectEnsureLogin.ensureLoggedIn(),
   async (request, response) => {
-    return response.render("create_new_question", {
+    return response.render("New_question", {
       id: request.params.id,
       csrfToken: request.csrfToken(),
     });
