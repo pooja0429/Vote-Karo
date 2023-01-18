@@ -30,9 +30,7 @@
     </script>
 </head>
 <body class="bg-gray-50">
-    <div class="relative flex min-h-screen text-gray-800 antialiased flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
-        <div class="relative py-3 sm:w-96 mx-auto text-center">
-            <span class="text-2xl font-light ">Edit Option For The Question</span>
+    
             <div>
                 <% if (messages && messages.error && messages.error.length > 0) { %>
                     <% for(var i=0; i<messages.error.length; i++) { %>
@@ -40,16 +38,34 @@
                     <% } %>
                 <% } %>
             </div>
-            <div class="mt-4 bg-white shadow-md rounded-lg text-left">
-                <div class="h-2 bg-red-400 rounded-t-md"></div>
-                <div class="px-8 py-6">
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-                    <label for="option" class="block mt-3 font-semibold">Option</label>
-                    <input value="<%= option %>" id="option" name="option" type="text" placeholder="Option" class="border w-full h-5 px-3 py-5 mt-2 hover:outline-none focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md" required>
-                    <button class="mt-6 w-full bg-red-500 text-white py-2 px-6 rounded-md hover:bg-red-600 " onclick="updateOption()">Update option</button>
+            <section class="text-gray-600 body-font">
+                <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+                  <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+                    <h1 class="title-font font-medium text-3xl text-gray-900">Edit Option For Your Question From Here</h1>
+                    <p class="leading-relaxed mt-4">Make Sure To Add Valid Options Only</p>
+                  </div>
+        
+                  <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+                    <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Create New Voter</h2>
+                  
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                        <div class="relative mb-4">
+                            <label for="option" class="leading-7 text-sm text-gray-600">Enter New Option</label>
+                            <input type="text" id="option" name="option" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                          </div>
+                          
+                          
+                    
+                
+                    <button onclick="updateOption()" type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Edit Option</button>
+
+                
+                  </div>
+                
                 </div>
-            </div>
-        </div>
-    </div>
+            
+              </section>
+     
+   
 </body>
 </html>
